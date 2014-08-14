@@ -1,0 +1,21 @@
+<html>
+<head><title>Find the dragons!</title>
+<script type='text/javascript'>
+	$(document).ready(function(){
+		$('#play-it').click(function(){
+			chrome.extension.sendMessage({action: "play"});
+		});
+	});
+	
+</script>
+</head>
+<body>
+	<iframe class="youtube-player"
+	type="text/html"
+	width="640"
+	height="385"
+	src="https://www.youtube.com/embed/kwnxiRDQ9Mo?autoplay=1">
+	</iframe>
+	<button id="play-it">Play it!</div>
+</body>
+</html>
