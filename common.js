@@ -5,7 +5,16 @@ var imageList = document.images;
 var imageArray = jQuery.makeArray(imageList);
 var imageChange = getRandomNumber(1, imageArray.length + 1);
 // Set the randomly chosen image to be the dragon.
+originalImageSrc = imageList[imageChange].src;
 imageList[imageChange].src = dragonSrc;
+
+$(document).ready(function(){
+	$("img[src$="+ dragonSrc).click(function(){
+		console.log("Dragon clicked!");
+		imageList[imageChange].src = originalImageSrc;
+	});
+});
+
 var audio = null;
 // A helper function to generate a random integer (Min - Inclusive, Max - Exclusive)
 function getRandomNumber(Min, Max){
