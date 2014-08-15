@@ -3,20 +3,14 @@
 	"version": "1.0",
 	"description": "Fill in later",
 	"manifest_version": 2,
-	"permissions" : ["tabs", "http://*/*", "https://*/*", "background"],
-	"web_accessible_resources": ["dragon.png", "test.mp3", "test.ogg"],
+	"permissions" : ["tabs", "http://*/*", "https://*/*"],
+	"web_accessible_resources": ["dragon.png", "test.mp3", "audio/test.ogg"],
 	"browser_action": {
 		"default_icon": "game-of-thrones-dragon.png",
 		"default_popup": "popup.html"
 	},
-
-	"background": {
-		"persistent" : true,
-		"scripts": [ "bg.js" ]
-
-	},
 	"content_scripts":[ {
-		"js": [ "jquery-2.1.1.min.js", "dragon.js" ],
+		"js": [ "jquery-2.1.1.min.js", "common.js" ],
 		"matches": [ "http://*/*", "https://*/*"]
 		}]
 }
