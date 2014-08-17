@@ -6,7 +6,7 @@
 	"permissions" : ["tabs", "http://*/*", "https://*/*"],
 	"web_accessible_resources": ["dragon.png", "test.mp3", "audio/test.ogg"],
 	"browser_action": {
-		"default_icon": "game-of-thrones-dragon.png",
+		"default_icon": "dragon.png",
 		"default_popup": "popup.html"
 	},
 	"content_scripts":[ {
