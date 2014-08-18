@@ -13,10 +13,6 @@
 //  Sound on hover?
 //  Total dragons found tracker
 
-
-
-
-
 dragonSrc = chrome.extension.getURL("dragon.png");
 
 // Get a HTML collection of all the images on the page.
@@ -26,11 +22,19 @@ var imageList = document.images;
 var imageArray = jQuery.makeArray(imageList);
 var imageChange = getRandomNumber(1, imageArray.length + 1);
 
+// Store the orignal height and width for later use
+var originalHeight = imageList[imageChange].height;
+var originalWidth = imageList[imageChange].width;
+
 // Set the randomly chosen image to be the dragon. Store the original source.
 var originalImageSrc = imageList[imageChange].src;
-console.log("Original Image Source: " + originalImageSrc);
+
 imageList[imageChange].src = dragonSrc;
 imageList[imageChange].className += " " + "dragonImage";
+
+// Change the height and width the same as the original image
+imageList[imageChange].width = originalWidth;
+imageList[imageChange].height = originalHeight;
 
 $(document).ready(function(){
 	$(".dragonImage").ready(function(){
@@ -38,7 +42,6 @@ $(document).ready(function(){
 		console.log("Pointer Events Removed!");
 	});
 	$(".dragonImage").mouseenter(function(){
-		console.log(originalImageSrc);
 		$(".dragonImage").attr('src', originalImageSrc);
 		console.log("Mouse Entered!");
 	});
